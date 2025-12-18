@@ -14,22 +14,8 @@ create table duenos (
     DIRECCION VARCHAR(100)
 )
 
-/* 1
-mike
-kaer
-11-2233-4455
-junin
 
-2
-jose
-carrasco
-11-3356-5555
-belgrano
 
-ezio
-audiotre
-?????
-????? */
 
 /*Ejercicio 3 – Crear tabla mascotas 
 Crear la tabla mascotas con las siguientes columnas:*/
@@ -70,14 +56,28 @@ create table historial_clinico (
 /*Ejercicio 6 – Insertar registros 
 Insertar: listo*/ 
 ● 3 dueños con información completa *
+INSERT INTO `duenos` (`id`, `nombre`, `apellido`, `telefono`, `direcion`) VALUES
+(1, 'mike', 'kaer', '11-2233-4455', 'mercedes'),
+(2, 'jose', 'carrasco', '11-3356-5555', 'belgrano'),
+(3, 'ezio', 'audiotre', '?????', '?????');
 
 ● 3 mascotas, cada una asociada a un dueño *
 INSERT INTO `mascotas` (`id`, `nombre`, `especie`, `fecha_nacimiento`, `id_dueno`) VALUES
 (1, 'kurt', 'pitbull', '2022-05-15', 1),
 (2, 'lizy', 'komodoro', '2021-10-10', 2);
+(3, 'firu', 'chihuahua', '2020-05-10', 3);
 
 ● 2 veterinarios con especialidades distintas *
+INSERT INTO `veterinario` (`id`, `nombre`, `apellido`, `matricula`, `especialidad`) VALUES
+(1, 'Alejandro', 'Díaz', '555-4001', 'Cardiología Veterinaria'),
+(2, 'Camila', 'Soto', '555-4002', 'Odontología Veterinaria');
+
+
 ● 3 registros de historial clínico*
+INSERT INTO `historial_clinico` (`id`, `id_mascota`, `id_veterinario`, `fecha_registro`, `descripcion`) VALUES
+(1, 1, 2, '2022-02-02 00:00:00', 'revision'),
+(2, 2, 2, '2022-02-03 00:00:00', 'remplazo de diente');
+(3, 3, 1, '2022-02-03 00:00:00', 'chequeo de emergencia');
 
 
 
@@ -96,7 +96,7 @@ WHERE id = 2;)*
 3. Editar la descripción de un historial clínico (por ID).
 (UPDATE historial_clinico 
 SET descripcion = 'El paciente muestra mejoría. Se ajustó la dosis de analgésicos y se recomienda reposo por 3 días más.' 
-WHERE id = 10;)*
+WHERE id = 3;)*
 
 /*Ejercicio 8 – Eliminar registros */
 1. Eliminar una mascota (por ID o nombre). 
